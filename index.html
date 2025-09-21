@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Connect - Student Resources Hub</title>
+    <title>CampusConnect - Student Resources Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Global Styles */
@@ -229,39 +229,29 @@
             padding: 40px;
             border-radius: 10px;
             margin-bottom: 30px;
-        }
-
-        .data-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .data-item {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .data-item h4 {
-            color: var(--primary);
-            margin-bottom: 10px;
-            border-bottom: 2px solid var(--accent2);
-            padding-bottom: 8px;
-        }
-
-        .loading {
             text-align: center;
-            padding: 20px;
-            color: var(--secondary);
         }
 
-        .loading i {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            display: block;
+        .external-link-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 15px 40px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .external-link-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .external-link-btn i {
+            margin-right: 10px;
         }
 
         /* How It Works */
@@ -541,29 +531,19 @@
         <div class="container">
             <div class="section-title">
                 <h2>Lost & Found</h2>
-                <p>Recent lost and found items reported by students</p>
+                <p>Access our Lost & Found database to report or search for items</p>
             </div>
             
             <div class="data-section">
-                <h3>Lost Items</h3>
-                <div class="loading">
-                    <i class="fas fa-spinner fa-spin"></i>
-                    <p>Loading lost items from Google Sheets...</p>
-                </div>
-                <div class="data-container" id="lost-items-container">
-                    <!-- Data will be loaded here from Google Sheets -->
-                </div>
-            </div>
-            
-            <div class="data-section">
-                <h3>Found Items</h3>
-                <div class="loading">
-                    <i class="fas fa-spinner fa-spin"></i>
-                    <p>Loading found items from Google Sheets...</p>
-                </div>
-                <div class="data-container" id="found-items-container">
-                    <!-- Data will be loaded here from Google Sheets -->
-                </div>
+                <h3>Lost & Found Database</h3>
+                <p>Click the button below to access our Lost & Found system</p>
+                
+                <!-- Replace # with your actual Google Sheet/Slide link -->
+                <a href="#" class="external-link-btn">
+                    <i class="fas fa-external-link-alt"></i> Access Lost & Found
+                </a>
+                
+                <p>You can report lost items, view found items, or contact the owner of a found item</p>
             </div>
         </div>
     </section>
@@ -573,18 +553,19 @@
         <div class="container">
             <div class="section-title">
                 <h2>Note Sharing</h2>
-                <p>Study materials shared by students</p>
+                <p>Access and contribute to our shared notes repository</p>
             </div>
             
             <div class="data-section">
-                <h3>Recent Notes</h3>
-                <div class="loading">
-                    <i class="fas fa-spinner fa-spin"></i>
-                    <p>Loading notes from Google Sheets...</p>
-                </div>
-                <div class="data-container" id="notes-container">
-                    <!-- Data will be loaded here from Google Sheets -->
-                </div>
+                <h3>Note Sharing Platform</h3>
+                <p>Click the button below to access our shared notes</p>
+                
+                <!-- Replace # with your actual Google Sheet/Slide link -->
+                <a href="#" class="external-link-btn">
+                    <i class="fas fa-external-link-alt"></i> Access Shared Notes
+                </a>
+                
+                <p>Browse notes by subject, upload your own notes, or download materials for your classes</p>
             </div>
         </div>
     </section>
@@ -594,19 +575,19 @@
         <div class="container">
             <div class="section-title">
                 <h2>Day Planner</h2>
-                <p>Plan your day and stay organized</p>
+                <p>Organize your schedule and manage your tasks</p>
             </div>
             
             <div class="data-section">
-                <h3>Weekly Planner</h3>
-                <div class="planner-container">
-                    <p>This is a static section. To implement a functional day planner that saves to Google Sheets, we would need to create additional forms and scripts.</p>
-                    <div class="planner-placeholder">
-                        <i class="fas fa-calendar-check" style="font-size: 5rem; color: var(--accent2); margin: 20px 0;"></i>
-                        <h4>Interactive Planner Coming Soon</h4>
-                        <p>We're working on integrating a full planner that will sync with your Google Sheets.</p>
-                    </div>
-                </div>
+                <h3>Daily Planning Tool</h3>
+                <p>Click the button below to access our day planner</p>
+                
+                <!-- Replace # with your actual Google Sheet/Slide link -->
+                <a href="#" class="external-link-btn">
+                    <i class="fas fa-external-link-alt"></i> Access Day Planner
+                </a>
+                
+                <p>Plan your daily schedule, set reminders for important tasks, and track your progress</p>
             </div>
         </div>
     </section>
@@ -697,138 +678,10 @@
     </footer>
 
     <script>
-        // Google Apps Script Web App URL (Replace with your own URL)
-        const LOST_FOUND_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxlVJ22hJvN_a1dN9_FkiomahXz3btKFG50AjgUUrKADUO7Jr6JRIgZ6n2Zjh51Ogc/exec';
-        const NOTES_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxlVJ22hJvN_a1dN9_FkiomahXz3btKFG50AjgUUrKADUO7Jr6JRIgZ6n2Zjh51Ogc/exec';
-        
-        // Function to load Lost & Found data
-        function loadLostFoundData() {
-            fetch(LOST_FOUND_SCRIPT_URL)
-                .then(response => response.json())
-                .then(data => {
-                    // Hide loading indicators
-                    document.querySelectorAll('.loading').forEach(el => {
-                        if (el.closest('#lost-found')) {
-                            el.style.display = 'none';
-                        }
-                    });
-                    
-                    // Process and display data
-                    displayLostFoundData(data);
-                })
-                .catch(error => {
-                    console.error('Error loading Lost & Found data:', error);
-                    document.querySelectorAll('#lost-found .loading').forEach(el => {
-                        el.innerHTML = '<p>Error loading data. Please try again later.</p>';
-                    });
-                });
-        }
-        
-        // Function to display Lost & Found data
-        function displayLostFoundData(data) {
-            const lostContainer = document.getElementById('lost-items-container');
-            const foundContainer = document.getElementById('found-items-container');
-            
-            // Clear containers
-            lostContainer.innerHTML = '';
-            foundContainer.innerHTML = '';
-            
-            // Sample data structure (replace with your actual data structure)
-            const sampleData = [
-                { type: 'lost', item: 'Calculus Textbook', description: 'Lost near library, has my name inside', contact: 'student@example.com', date: '2023-10-15' },
-                { type: 'found', item: 'Water Bottle', description: 'Found in lecture hall B-204', contact: 'finder@example.com', date: '2023-10-16' },
-                { type: 'lost', item: 'Student ID', description: 'Lost somewhere near campus cafe', contact: 'john@example.com', date: '2023-10-14' },
-                { type: 'found', item: 'Backpack', description: 'Found in computer lab, black with blue straps', contact: 'lab-assistant@example.com', date: '2023-10-17' }
-            ];
-            
-            // Display data (in a real scenario, you would use the actual data from Google Sheets)
-            sampleData.forEach(item => {
-                const itemElement = document.createElement('div');
-                itemElement.className = 'data-item';
-                itemElement.innerHTML = `
-                    <h4>${item.item}</h4>
-                    <p>${item.description}</p>
-                    <p><strong>Contact:</strong> ${item.contact}</p>
-                    <p><strong>Date:</strong> ${item.date}</p>
-                `;
-                
-                if (item.type === 'lost') {
-                    lostContainer.appendChild(itemElement);
-                } else {
-                    foundContainer.appendChild(itemElement);
-                }
-            });
-            
-            // If no items found
-            if (lostContainer.innerHTML === '') {
-                lostContainer.innerHTML = '<p>No lost items reported yet.</p>';
-            }
-            if (foundContainer.innerHTML === '') {
-                foundContainer.innerHTML = '<p>No found items reported yet.</p>';
-            }
-        }
-        
-        // Function to load Notes data
-        function loadNotesData() {
-            fetch(NOTES_SCRIPT_URL)
-                .then(response => response.json())
-                .then(data => {
-                    // Hide loading indicator
-                    document.querySelectorAll('.loading').forEach(el => {
-                        if (el.closest('#note-sharing')) {
-                            el.style.display = 'none';
-                        }
-                    });
-                    
-                    // Process and display data
-                    displayNotesData(data);
-                })
-                .catch(error => {
-                    console.error('Error loading Notes data:', error);
-                    document.querySelectorAll('#note-sharing .loading').forEach(el => {
-                        el.innerHTML = '<p>Error loading data. Please try again later.</p>';
-                    });
-                });
-        }
-        
-        // Function to display Notes data
-        function displayNotesData(data) {
-            const notesContainer = document.getElementById('notes-container');
-            
-            // Clear container
-            notesContainer.innerHTML = '';
-            
-            // Sample data structure (replace with your actual data structure)
-            const sampleData = [
-                { title: 'Calculus Lecture Notes', subject: 'Mathematics', author: 'Jane Doe', date: '2023-10-15' },
-                { title: 'Physics Lab Report', subject: 'Physics', author: 'John Smith', date: '2023-10-14' },
-                { title: 'History Essay Tips', subject: 'History', author: 'Alex Johnson', date: '2023-10-13' }
-            ];
-            
-            // Display data (in a real scenario, you would use the actual data from Google Sheets)
-            sampleData.forEach(note => {
-                const noteElement = document.createElement('div');
-                noteElement.className = 'data-item';
-                noteElement.innerHTML = `
-                    <h4>${note.title}</h4>
-                    <p><strong>Subject:</strong> ${note.subject}</p>
-                    <p><strong>Author:</strong> ${note.author}</p>
-                    <p><strong>Date:</strong> ${note.date}</p>
-                    <a href="#" class="btn">Download</a>
-                `;
-                notesContainer.appendChild(noteElement);
-            });
-            
-            // If no notes found
-            if (notesContainer.innerHTML === '') {
-                notesContainer.innerHTML = '<p>No notes shared yet.</p>';
-            }
-        }
-        
-        // Load data when page is ready
+        // Simple script to handle external links
         document.addEventListener('DOMContentLoaded', function() {
-            loadLostFoundData();
-            loadNotesData();
+            // You can add any JavaScript functionality here if needed
+            console.log('CampusConnect website loaded successfully');
         });
     </script>
 </body>
